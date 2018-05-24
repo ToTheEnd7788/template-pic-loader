@@ -1,12 +1,11 @@
-﻿# FEATURE
-
+﻿#FEATURE
 1. solve the template like hbs, for *Webpack* ,
 2. Solve the pictures source request in up-template which request like tags named 'img' or 'link?rel=shorcut icon' *, for *Webpack* 
 
 #Todos
 Use ES6+ to rebuild the loader
 
-# HOW TO USE
+#HOW TO USE
 Like **url-loader** , you should use it like: ↓   
 
 1. **In template**
@@ -54,3 +53,4 @@ If the picture source size less than limit, loader will translate source to base
 2. v1.1.2 : Add Readme files
 3. v1.1.3 : update the package.json, and push code to github respository
 4. v1.1.4: fixed structure of project files positions
+5. v1.1.6: fixed md file
