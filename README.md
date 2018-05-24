@@ -1,4 +1,4 @@
-# FEATURE
+﻿# FEATURE
 
 1. solve the template like hbs, for *Webpack* ,
 2. Solve the pictures source request in up-template which request like tags named 'img' or 'link?rel=shorcut icon' *, for *Webpack* 
@@ -52,3 +52,5 @@ If the picture source size less than limit, loader will translate source to base
 ##version logs
 1. v1.1.0 : Begin to add Readme, and this is the test version
 2. v1.1.2 : Add Readme files
+3. v1.1.3 : update the package.json, and push code to github respository
+4. v1.1.4: fixed structure of project files positions

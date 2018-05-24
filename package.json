@@ -1,19 +1,25 @@
 {
   "name": "template-pic-loader",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "To solve the pic url base on alias",
   "main": "index.js",
+  "repository": "https://github.com/ToTheEnd0314/template-pic-loader",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "horseslee",
+  "author": "ToTheEnd0314",
   "license": "MIT",
   "dependencies": {
     "loader-utils": "^1.1.0",
     "md5": "^2.2.1",
     "mime": "^2.3.1"
-  }
+  },
+  "keywords": [
+    "md5",
+    "source-link",
+    "pictures"
+  ]
 }
