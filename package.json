@@ -1,6 +1,6 @@
 {
   "name": "template-pic-loader",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "To solve the pic url base on alias",
   "main": "index.js",
   "repository": "https://github.com/ToTheEnd0314/template-pic-loader",
@@ -20,6 +20,7 @@
   "keywords": [
     "md5",
     "source-link",
-    "pictures"
+    "pictures",
+    "DOM tags"
   ]
 }
