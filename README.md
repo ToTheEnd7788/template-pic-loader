@@ -1,6 +1,6 @@
 ﻿#FEATURE
 1. solve the template like hbs, for *Webpack* ,
-2. Solve the pictures source request in up-template which request like tags named 'img' or 'link?rel=shorcut icon' *, for *Webpack* 
+2. Solve the pictures source request in up-template which request like tags named 'img' or 'link?rel=shorcut icon', for *Webpack*
 
 #Todos
 Use ES6+ to rebuild the loader
