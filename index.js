@@ -1,6 +1,5 @@
 const path = require('path');
 const mime = require('mime');
-const md5 = require('md5');
 const loaderUtils = require('loader-utils');
 
 let options = {
@@ -59,9 +58,7 @@ function replaceContent(ctx, source, tags, attrName) {
         if (options.name.match(hashRegExp)) {
           relPath = relPath.replace(
             hashRegExp,
-            md5(fileSource)
-              .substring(md5(fileSource).length - parseInt(options.name.slice(1, -1).split(':')[1]),
-              md5(fileSource).length)
+            loaderUtils.getHashDigest(fileSource, 'md5', 'hex', parseInt(options.name.slice(1, -1).split(':')[1]))
             );
         }
 
