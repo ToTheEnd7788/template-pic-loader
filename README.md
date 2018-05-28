@@ -1,11 +1,11 @@
-﻿#FEATURE
+##FEATURE
 1. solve the template like hbs, for *Webpack* ,
 2. Solve the pictures source request in up-template which request like tags named 'img' or 'link?rel=shorcut icon', for *Webpack*
 
-#Todos
+##Todos
 Use ES6+ to rebuild the loader
 
-#HOW TO USE
+##HOW TO USE
 Like **url-loader** , you should use it like: ↓   
 
 1. **In template**
@@ -43,12 +43,12 @@ Tell loader which tags and tag's attr need to bundle, if only one tag, you'd bet
 **limit**: Number(int)  
 If the picture source size less than limit, loader will translate source to base64, and fix emit file request url, or fix request url in tags directly.
 
-#Tips
+##Tips
 1. Must have resolve.alias in webpack.config, and use it, like '__imgs/......'
 2. Hot reload did't support so far
 3. the hashValue is from md5 rules
 
-##version logs
+###version log
 1. v1.1.0 : Begin to add Readme, and this is the test version
 2. v1.1.2 : Add Readme files
 3. v1.1.3 : update the package.json, and push code to github respository
