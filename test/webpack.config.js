@@ -17,6 +17,19 @@ export default {
 
   mode: 'production',
 
+  resolve: {
+    alias: {
+      '__imgs': path.resolve(srcRoot, 'imgs')
+    }
+  },
+
+  resolveLoader: {
+    modules: [
+      path.resolve(__dirname, '../src/'),
+      'node_modules'
+    ]
+  },
+
   module: {
     rules: [
       {
@@ -32,7 +45,11 @@ export default {
         // Use template-pic-loader
         use: [
           {
-            loader: '../src/loader.js'
+            loader: 'loader.js',
+            options: {
+              self: false,
+              condition: [ 'link?rel=icon:href', 'img:src' ]
+            }
           }
         ]
       },
