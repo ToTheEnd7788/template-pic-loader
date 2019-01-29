@@ -9,14 +9,13 @@ export default function(source) {
     condition: null
   }, 
   options = Object.assign(defaultOpts, loaderUtils.getOptions(this));
-
+  
   validator(options);
+  getTags(options);
 
-  getTags(options)
-
-  if (!options.self) {
+  // if (!options.self) {
     
-  }
+  // }
 
   return source;
 };
