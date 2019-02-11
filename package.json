@@ -2,17 +2,19 @@
   "name": "template-pic-loader",
   "version": "1.2.0",
   "description": "To solve the pic url base on alias",
-  "main": "./src/loader.js",
+  "main": "./lib/loader.js",
   "repository": "https://github.com/ToTheEnd0314/template-pic-loader",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "babel-node ./test/bundle.js"
+    "test": "babel-node ./test/bundle.js",
+    "build": "babel src/ --out-dir lib/"
   },
   "author": "ToTheEnd0314",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
