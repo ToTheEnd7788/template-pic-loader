@@ -1,13 +1,12 @@
 export default (ctx, tags) => {
-  let pros = tags.reduce((acc, item) => {
+  let pros = tags.reduce((acc, tag) => {
     acc.push(
       new Promise((res, rej) => {
-        ctx.loadModule(item.value, (err, source, sourceMap, module) => {
+        ctx.loadModule(tag.value, (err, source) => {
           if (err) rej(err);
           res({
             source,
-            sourceMap,
-            module
+            tag
           });
         })
       })

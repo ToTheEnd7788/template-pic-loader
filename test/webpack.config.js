@@ -1,7 +1,8 @@
 import path from 'path';
 
 let srcRoot = path.resolve(__dirname, 'src'),
-  distRoot = path.resolve(__dirname, '../dist');
+  distRoot = path.resolve(__dirname, '../dist'),
+  imgs = path.resolve(__dirname, 'imgs');
 
 export default {
   context: srcRoot,
@@ -12,14 +13,15 @@ export default {
 
   output: {
     path: distRoot,
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/dist'
   },
 
-  mode: 'production',
+  mode: 'development',
 
   resolve: {
     alias: {
-      '__imgs': path.resolve(srcRoot, 'imgs')
+      '__imgs': imgs
     }
   },
 
@@ -47,20 +49,22 @@ export default {
           {
             loader: 'loader.js',
             options: {
-              self: false,
-              condition: [ 'link?rel=icon:href', 'img:src' ]
+              condition: [ 'link?rel=icon:href', 'img:src' ],
+              extract: true,
+              filename: '[name].[ext]',
+              minimize: true
             }
           }
         ]
       },
       {
-        test: /\.png$/,
+        test: /\.(png|ico)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 1,
-              name: '[name].[ext]'
+              limit: 90,
+              name: 'imgs/[name]~[hash:8].[ext]'
             }
           }
         ]
