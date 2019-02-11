@@ -2,7 +2,7 @@
   "name": "template-pic-loader",
   "version": "1.2.0",
   "description": "To solve the pic url base on alias",
-  "main": "index.js",
+  "main": "./src/loader.js",
   "repository": "https://github.com/ToTheEnd0314/template-pic-loader",
   "directories": {
     "lib": "lib"
