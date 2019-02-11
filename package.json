@@ -1,7 +1,7 @@
 {
   "name": "template-pic-loader",
-  "version": "1.2.0",
-  "description": "To solve the pic url base on alias",
+  "version": "2.0.2",
+  "description": "To solve the pic url in template",
   "main": "./lib/loader.js",
   "repository": "https://github.com/ToTheEnd0314/template-pic-loader",
   "directories": {
@@ -27,7 +27,8 @@
   },
   "keywords": [
     "url-loader",
-    "loadModule"
+    "template",
+    "minimize"
   ],
   "devDependencies": {
     "babel-loader": "^8.0.5",
