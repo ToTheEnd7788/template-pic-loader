@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "babel-node ./test/bundle.js",
-    "build": "babel src/ --out-dir lib/"
+    "build": "babel src/ --out-dir lib/",
+    "prepublish": "npm run build"
   },
   "author": "ToTheEnd0314",
   "license": "MIT",
