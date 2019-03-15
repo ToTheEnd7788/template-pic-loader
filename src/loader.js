@@ -1,9 +1,9 @@
 import loaderUtils from 'loader-utils';
 import path from 'path';
-import Minimize from 'minimize';
 import validateOptions from 'schema-utils';
 import getTags from './libs/get-tags';
-import promises from './libs/promises';
+import Minimize from 'minimize';
+import { promises, response } from './libs/utils';
 
 export default function(source) {
   let schemaOpts = {
@@ -41,39 +41,44 @@ export default function(source) {
 
   validateOptions(schemaOpts, options, 'template-pic-loader');
 
-  let tags = getTags(options, source);
+  let tags = new getTags(options, source);
+  tags.init();
 
-  Promise.all(promises(this, tags)).then(res => {
-    res.forEach(item => {
-      let url = item.source.match(/(?<=^module\.exports[\s]=[\s])[\s\S]*/g)[0];
-
-      if (/^__webpack_public_path__/.test(url)) {
-        url = path.resolve(pubPath, url.split(' + ')[1].slice(1, -2));
-      } else url = url.slice(1, -2);
-
-      source = source.replace(item.tag.tag, () => {
-        return item.tag.tag.replace(item.tag.value, url);
+  if (tags.tagsInfo.length > 0) {
+    Promise.all(promises(this, tags.tagsInfo)).then(res => {
+      res.forEach(item => {
+        let url = item.source.match(/(?<=^module\.exports[\s]=[\s])[\s\S]*/g)[0];
+  
+        if (/^__webpack_public_path__/.test(url)) {
+          url = path.resolve(pubPath, url.split(' + ')[1].slice(1, -2));
+        } else url = url.slice(1, -2);
+  
+        source = source.replace(item.tag.tag, () => {
+          return item.tag.tag.replace(item.tag.value, url);
+        });
+  
       });
-
+  
+      if (options.minimize) {
+        let minimize = new Minimize(options.minopt);
+        source = minimize.parse(source);
+      }
+  
+      if (options.extract) {
+        let ext = path.extname(this.resourcePath),
+          name = path.basename(this.resourcePath, ext),
+          filename = options.filename
+            .replace(/\[name\]/g, name)
+            .replace(/\[ext\]/g, ext.substr(1));
+        this.emitFile(filename, source);
+        callback(null, response(this, options, source));
+      } else {
+        callback(null, response(this, options, source));
+      }
+    }, err => {
+      return callback(err);
     });
-
-    if (options.minimize) {
-      let minimize = new Minimize(options.minopt);
-      source = minimize.parse(source);
-    }
-
-    if (options.extract) {
-      let ext = path.extname(this.resourcePath),
-        name = path.basename(this.resourcePath, ext),
-        filename = options.filename
-          .replace(/\[name\]/g, name)
-          .replace(/\[ext\]/g, ext.substr(1));
-      this.emitFile(filename, source);
-      callback(null, '// Extracted by template-pic-loader');
-    } else {
-      callback(null, `export default ${JSON.stringify(source)}`);
-    }
-  }, err => {
-    return callback(err);
-  });
+  } else {
+    callback(null, response(this, options, source));
+  }
 };

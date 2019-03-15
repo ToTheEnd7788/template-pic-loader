@@ -1,3 +1,6 @@
+##TemplatePicLoader(v2.1.0)
+**If You Has Any Bugs To Tell Author, Please Jump To [Github](https://github.com/ToTheEnd0314/template-pic-loader)**
+***If This Loader Is Helpful For You, Please [GIVE ME A STAR](https://github.com/ToTheEnd0314/template-pic-loader)***
 ### FEATURE
 1. solve the template link source like hbs, html, with **Webpack** ,
 2. Solve the like pictures source request in up-template which request like tags named 'img' or 'link?rel=shorcut icon', for **Webpack**
@@ -50,6 +53,4 @@ rules: [
   Minimize the source or not.
 
   **minopt**: Object
-  Work when **minimize** is true, like [**minimize package options**](https://www.npmjs.com/package/minimize), you can check it.
-
-***If this small package is helpful in your applications please give it a start, THANKS!!!***
+  Work when **minimize** is true, like [minimize package options](https://www.npmjs.com/package/minimize), you can check it.

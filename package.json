@@ -1,6 +1,6 @@
 {
   "name": "template-pic-loader",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "To solve the pic url in template",
   "main": "./lib/loader.js",
   "repository": "https://github.com/ToTheEnd0314/template-pic-loader",
