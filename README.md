@@ -1,9 +1,10 @@
 ### TemplatePicLoader
 ---
-**If You Has Any Bugs To Tell Author, Please Jump To [Github](https://github.com/ToTheEnd0314/template-pic-loader)** <br />
+*If You Has Any Bugs To Tell Author, Please Jump To [Github](https://github.com/ToTheEnd0314/template-pic-loader)* <br />
 ***If This Loader Is Helpful For You, Please [GIVE ME A STAR](https://github.com/ToTheEnd0314/template-pic-loader)***
 ---
 ### FEATURE
+---
 1. solve the template link source like hbs, html, with **Webpack** ,
 2. Solve the like pictures source request in up-template which request like tags named 'img' or 'link?rel=shorcut icon', for **Webpack**
 3. It depends on **url-loader**
@@ -11,7 +12,8 @@
 #### TODO
 Support hash
 
-### HOW TO USE 
+### HOW TO USE
+---
 #### **Template**
 ```
 < link rel="shortcut icon" href="xxxxxx" >
@@ -42,6 +44,7 @@ rules: [
 ]
 ```
 #### Options
+---
   **filename** : String  
   Output file information.
 
