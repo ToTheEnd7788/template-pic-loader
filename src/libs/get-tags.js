@@ -62,7 +62,7 @@ class GetTags {
     this.tagsInfo = this.tagMap.reduce((acc, item) => {
       let allTags = this.source
         .match(new RegExp(`<${item.tName}[\\s\\S]*?[\\s]*[\\/]?>`, 'g')),
-        tags = allTags;
+        tags = allTags || [];
 
       if (item.signAttrs) {
         let signExpStr = '';

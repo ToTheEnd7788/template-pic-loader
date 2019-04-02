@@ -8,6 +8,7 @@ export default {
   context: srcRoot,
 
   entry: {
+    app: ['./app.js'],
     index: ['./index.js']
   },
 
