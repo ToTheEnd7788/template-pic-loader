@@ -50,7 +50,7 @@ export default function(source) {
         let url = item.source.match(/(?<=^module\.exports[\s]=[\s])[\s\S]*/g)[0];
   
         if (/^__webpack_public_path__/.test(url)) {
-          url = path.resolve(pubPath, url.split(' + ')[1].slice(1, -2));
+          url = path.join(pubPath, url.split(' + ')[1].slice(1, -2));
         } else url = url.slice(1, -2);
   
         source = source.replace(item.tag.tag, () => {
